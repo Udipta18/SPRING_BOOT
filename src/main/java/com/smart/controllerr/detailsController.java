@@ -3,8 +3,11 @@ package com.smart.controllerr;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,5 +33,15 @@ public class detailsController {
 		List<Details> allDetails = detailsService.getAllDetails();
 		System.out.println("successfully fetched");
 		return allDetails;
+	}
+	@PutMapping("/{rollNo}")
+	public Details updateDetails( @RequestBody Details details,@PathVariable int rollNo) {
+		Details updateDetails = detailsService.updateDetails(details, rollNo);
+		return updateDetails;
+	}
+	@DeleteMapping("/{rollNo}")
+	public void deleteDetails(@PathVariable int rollNo) {
+		detailsService.deleteDetails(rollNo);
+		System.out.println("DELETED SUCCESSFULLY");
 	}
 }
