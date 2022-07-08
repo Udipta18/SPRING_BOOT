@@ -9,5 +9,5 @@ public interface DetailsService {
 	public List<Details> getAllDetails(); 
 	public Details updateDetails(Details details,int rollNo);
 	public void deleteDetails(int rollNo);
-	
+	public Details getDeatilsByRollNo(int rollNo);
 }

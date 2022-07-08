@@ -44,4 +44,10 @@ public class detailsController {
 		detailsService.deleteDetails(rollNo);
 		System.out.println("DELETED SUCCESSFULLY");
 	}
+	@GetMapping("/{rollNo}")
+	public Details getDetailsByRollNo(@PathVariable int rollNo) {
+		Details deatilsByRollNo = detailsService.getDeatilsByRollNo(rollNo);
+		System.out.println("WOPRK DONE SUCCESS");
+		return deatilsByRollNo;
+	}
 }

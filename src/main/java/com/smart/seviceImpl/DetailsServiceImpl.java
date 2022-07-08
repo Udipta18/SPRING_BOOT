@@ -38,5 +38,11 @@ public class DetailsServiceImpl implements DetailsService {
 		detailsDao.deleteDetails(rollNo);
 	}
 
+	@Override
+	public Details getDeatilsByRollNo(int rollNo) {
+		// TODO Auto-generated method stub
+		return detailsDao.getDetailsByRollNo(rollNo) ;
+	}
+
 	
 }

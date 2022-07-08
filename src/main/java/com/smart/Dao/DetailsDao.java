@@ -45,4 +45,10 @@ public class DetailsDao {
 		int update = jdbcTemplate.update(query, rollNo);
 		System.out.println(update + "row effected");
 	}
+	
+	public Details getDetailsByRollNo(int rollNo) {
+		String query="select * from Details where rollNo=? ";
+		Details details = jdbcTemplate.queryForObject(query, new DetailsRowMapper(), rollNo);
+		return details;
+	}
 }
